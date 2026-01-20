@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>5. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -19,6 +19,19 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     h2 { margin-top: 0; color: #333; }
+
+    /* Görsel stilleri */
+    .question-image {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .question-image img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
     /* Seçenek Butonları Tasarımı */
     .options button {
@@ -117,18 +130,24 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>5. Soru</h2>
+
+    <p><strong>5.</strong></p>
+
+    <div class="question-image">
+      <img src="https://raw.githubusercontent.com/ilkerowic/emrhllh/main/sorular/cilek.png" alt="Soru görseli">
+    </div>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Aşağıda verilmiş olan öğretim materyali hangi tasarım ilkesi ile bağdaşmamaktadır?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Uyum</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Denge</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Hizalama</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Yakınlık</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Bütünlük</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +161,31 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S5";
+    const nextUrl = "6.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    // 5. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Tam on ikiden vurdun!  Tasarım ilkeleri senden sorulur 🎯"
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Uyum ilkesini anımsayamadın sanırım! Umarım bu soru anımsamana yardımcı olur.\n\n⁉️💡Materyal tasarımında yazın yetişen meyveler gibi aynı kategoriye ait unsurlarda farklı renkler ve farklı stillerin kullanılması uyum ilkesi ile bağdaşmamaktadır."
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Uyum ilkesini anımsayamadın sanırım! Umarım bu soru anımsamana yardımcı olur.\n\n⁉️💡Materyal tasarımında yazın yetişen meyveler gibi aynı kategoriye ait unsurlarda farklı renkler ve farklı stillerin kullanılması uyum ilkesi ile bağdaşmamaktadır."
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Uyum ilkesini anımsayamadın sanırım! Umarım bu soru anımsamana yardımcı olur.\n\n⁉️💡Materyal tasarımında yazın yetişen meyveler gibi aynı kategoriye ait unsurlarda farklı renkler ve farklı stillerin kullanılması uyum ilkesi ile bağdaşmamaktadır."
       },
       E: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Uyum ilkesini anımsayamadın sanırım! Umarım bu soru anımsamana yardımcı olur.\n\n⁉️💡Materyal tasarımında yazın yetişen meyveler gibi aynı kategoriye ait unsurlarda farklı renkler ve farklı stillerin kullanılması uyum ilkesi ile bağdaşmamaktadır."
       }
     };
 

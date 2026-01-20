@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>10. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,21 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>10. Soru</h2>
+
+    <p><strong>10.</strong></p>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Edgar Dale’nin yaşantı konisi dikkate alındığında öğrenciler somut deneyimlerini en çok
+      aşağıdaki öğretim materyallerinden hangisi ile kazanabilir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Modeller</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Karikatürler</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Kavram Şemaları</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Dramatize deneyimler</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Sergiler</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +145,31 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S10";
+    const nextUrl = "11.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    // 10. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Harika! Konuları ilişkilendirebiliyorsun 👏"
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Edgar Dale'nin yaşantı konisini dikkate almalısın. Açıklamayı okuyarak yanıtını gözden geçirebilirsin.\n\n⁉️💡Dale'ın yaşantı konisine göre öğrenciler somut deneyimlerini doğrudan yaşantılardan sonra en çok modeller aracılığıyla kazanabilirler. Bunun nedeni modellerin daha fazla duyu organına hitap etmesidir."
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Edgar Dale'nin yaşantı konisini dikkate almalısın. Açıklamayı okuyarak yanıtını gözden geçirebilirsin.\n\n⁉️💡Dale'ın yaşantı konisine göre öğrenciler somut deneyimlerini doğrudan yaşantılardan sonra en çok modeller aracılığıyla kazanabilirler. Bunun nedeni modellerin daha fazla duyu organına hitap etmesidir."
       },
       D: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Edgar Dale'nin yaşantı konisini dikkate almalısın. Açıklamayı okuyarak yanıtını gözden geçirebilirsin.\n\n⁉️💡Dale'ın yaşantı konisine göre öğrenciler somut deneyimlerini doğrudan yaşantılardan sonra en çok modeller aracılığıyla kazanabilirler. Bunun nedeni modellerin daha fazla duyu organına hitap etmesidir."
       },
       E: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Edgar Dale'nin yaşantı konisini dikkate almalısın. Açıklamayı okuyarak yanıtını gözden geçirebilirsin.\n\n⁉️💡Dale'ın yaşantı konisine göre öğrenciler somut deneyimlerini doğrudan yaşantılardan sonra en çok modeller aracılığıyla kazanabilirler. Bunun nedeni modellerin daha fazla duyu organına hitap etmesidir."
       }
     };
 

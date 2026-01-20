@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>13. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,26 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>13. Soru</h2>
+
+    <p><strong>13.</strong></p>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Uğur Öğretmen fotosentez sürecini anlatmaya yönelik bir öğretim materyali hazırlarken
+      öğrencilerin birden fazla duyu organına hitap etmesine ve kavramların net bir şekilde
+      tanımlanmış olmasına dikkat etmiştir.
+    </p>
+
+    <p>
+      Uğur Öğretmenin bu tutumu öğretim materyali seçiminde hangi ilkeyi ön plana aldığını gösterir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Uyum</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Denge</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Oran</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Açıklık</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Bütünlük</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +150,31 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S13";
+    const nextUrl = "14.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    // 13. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Materyal seçiminde dikkate alınan ilkeleri karıştırmış olabilirsin. Moralimizi bozmuyoruz 😊\n\n⁉️💡Açıklık ilkesine göre bir öğretim materyalinin içeriği anlaşılır ve kolay takip edilebilir olmalıdır. Öğretim materyalinde birden fazla duyu organına hitap edilmesi ve kavramların net bir şekilde tanımlanmış olması açıklık ilkesinin ön plana çıkarıldığını gösterir."
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Materyal seçiminde dikkate alınan ilkeleri karıştırmış olabilirsin. Moralimizi bozmuyoruz 😊\n\n⁉️💡Açıklık ilkesine göre bir öğretim materyalinin içeriği anlaşılır ve kolay takip edilebilir olmalıdır. Öğretim materyalinde birden fazla duyu organına hitap edilmesi ve kavramların net bir şekilde tanımlanmış olması açıklık ilkesinin ön plana çıkarıldığını gösterir."
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Materyal seçiminde dikkate alınan ilkeleri karıştırmış olabilirsin. Moralimizi bozmuyoruz 😊\n\n⁉️💡Açıklık ilkesine göre bir öğretim materyalinin içeriği anlaşılır ve kolay takip edilebilir olmalıdır. Öğretim materyalinde birden fazla duyu organına hitap edilmesi ve kavramların net bir şekilde tanımlanmış olması açıklık ilkesinin ön plana çıkarıldığını gösterir."
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Açıklık ilkesini doğru öğrenmişsin, harika 😊"
       },
       E: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Materyal seçiminde dikkate alınan ilkeleri karıştırmış olabilirsin. Moralimizi bozmuyoruz 😊\n\n⁉️💡Açıklık ilkesine göre bir öğretim materyalinin içeriği anlaşılır ve kolay takip edilebilir olmalıdır. Öğretim materyalinde birden fazla duyu organına hitap edilmesi ve kavramların net bir şekilde tanımlanmış olması açıklık ilkesinin ön plana çıkarıldığını gösterir."
       }
     };
 

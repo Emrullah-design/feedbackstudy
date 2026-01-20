@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>7. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,27 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>7. Soru</h2>
+
+    <p><strong>7.</strong></p>
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Buket Öğretmen uzaktan öğrenmeye dayalı dersini tasarlarken;
+    </p>
+    <p>
+      I. Öğrencilere önermek istediği bir web sitesindeki içeriğin bazılarının tamamlanmamış olduğunu,<br>
+      II. Bu web sitesinde bulunan bağlantılara tıkladığında bu sitelerin hizmet vermediğini görmüştür.
+    </p>
+    <p>
+      Buna göre Buket Öğretmenin karşılaştığı durum sırasıyla web sitesi değerlendirme ölçütlerinin
+      hangileri ile ilişkilidir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Doğruluk - Nesnellik</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Tasarım - Etiklik</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Kapsam – Güncellik</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Güncellik – Bilgilendirme</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Güncellik - Doğruluk</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +151,31 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S7";
+    const nextUrl = "8.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    // 7. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Üzülme! Bu soruda çok güçlü çeldiriciler vardı ama artık doğru cevabı biliyoruz.\n\n⁉️💡Web sitesinde belirli bir içeriğin tamamlanmamış olması kapsamla ilgili, sunulan linklerin çalışmaması ise güncellikle ilgili bir durumdur."
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Üzülme! Bu soruda çok güçlü çeldiriciler vardı ama artık doğru cevabı biliyoruz.\n\n⁉️💡Web sitesinde belirli bir içeriğin tamamlanmamış olması kapsamla ilgili, sunulan linklerin çalışmaması ise güncellikle ilgili bir durumdur."
       },
       C: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Çok iyi! Web sitesi değerlendirmeye ilişkin detaylara oldukça hakimsin! 👍🏻"
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Üzülme! Bu soruda çok güçlü çeldiriciler vardı ama artık doğru cevabı biliyoruz.\n\n⁉️💡Web sitesinde belirli bir içeriğin tamamlanmamış olması kapsamla ilgili, sunulan linklerin çalışmaması ise güncellikle ilgili bir durumdur."
       },
       E: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Üzülme! Bu soruda çok güçlü çeldiriciler vardı ama artık doğru cevabı biliyoruz.\n\n⁉️💡Web sitesinde belirli bir içeriğin tamamlanmamış olması kapsamla ilgili, sunulan linklerin çalışmaması ise güncellikle ilgili bir durumdur."
       }
     };
 

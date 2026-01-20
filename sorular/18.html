@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>18. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,17 +117,19 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>18. Soru</h2>
+
+    <p><strong>18.</strong></p>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek etkilerden birisi değildir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Farklılıkları vurgulamak</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Görüntünün gerçekliğini artırmak</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) İstenilen duyusal etkiyi yaratmak</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Etkileşimliliği sağlamak</button>
       <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
     </div>
 
@@ -142,31 +144,33 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S18";
+    const nextUrl = "19.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
+    
+    const infoText = "\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir.";
 
-    // 3. Soruya özel feedback metinleri
+    // 18. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Endişelenme, öğrenme sürecinde hata yapmak son derece normaldir. Soruya iyi odaklanabilirsen görsel tasarımdaki renk kullanımına ilişkin yanlış seçeneği bulabileceğine inanıyorum." + infoText
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Endişelenme, öğrenme sürecinde hata yapmak son derece normaldir. Soruya iyi odaklanabilirsen görsel tasarımdaki renk kullanımına ilişkin yanlış seçeneği bulabileceğine inanıyorum." + infoText
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Endişelenme, öğrenme sürecinde hata yapmak son derece normaldir. Soruya iyi odaklanabilirsen görsel tasarımdaki renk kullanımına ilişkin yanlış seçeneği bulabileceğine inanıyorum." + infoText
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Görsel tasarım konusunda iyi olduğunu söylemiş miydim 😊"
       },
       E: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Endişelenme, öğrenme sürecinde hata yapmak son derece normaldir. Soruya iyi odaklanabilirsen görsel tasarımdaki renk kullanımına ilişkin yanlış seçeneği bulabileceğine inanıyorum." + infoText
       }
     };
 

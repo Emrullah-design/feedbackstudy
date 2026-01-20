@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -6,7 +5,7 @@
   <title>1. Soru</title>
   <style>
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif; /* Biraz daha modern font */
       max-width: 800px;
       margin: 40px auto;
       line-height: 1.6;
@@ -28,7 +27,7 @@
       margin-bottom: 10px;
       padding: 12px 15px;
       border-radius: 8px;
-      border: 2px solid #e0e0e0;
+      border: 2px solid #e0e0e0; /* Kenarlık belirginleştirildi */
       background: #fff;
       cursor: pointer;
       text-align: left;
@@ -45,7 +44,7 @@
       color: #888;
     }
 
-    /* Seçilen Şık İşaretlemeleri */
+    /* Seçilen Şık İşaretlemeleri (JS ile eklenecek sınıflar) */
     .options button.selected-correct {
       border-color: #4CAF50;
       background-color: #e8f5e9;
@@ -61,7 +60,7 @@
 
     /* FEEDBACK (GERİ BİLDİRİM) ALANI */
     #feedbackArea {
-      display: none;
+      display: none; /* Başlangıçta gizli */
       margin-top: 20px;
       padding: 20px;
       border-radius: 8px;
@@ -78,26 +77,26 @@
       display: block;
     }
     .status-correct {
-      color: #4CAF50;
+      color: #4CAF50; /* Yeşil */
       border-left: 5px solid #4CAF50;
     }
     .status-wrong {
-      color: #d32f2f;
+      color: #d32f2f; /* Kırmızı */
       border-left: 5px solid #d32f2f;
     }
 
     #feedbackText {
-      white-space: pre-wrap;
+      white-space: pre-wrap; /* Satır sonlarını korur */
       color: #555;
     }
 
     /* SONRAKİ SORU BUTONU */
     #nextButtonContainer {
-      display: none;
+      display: none; /* Başlangıçta gizli */
       margin-top: 20px;
     }
     #btnNext {
-      background-color: #1976d2;
+      background-color: #1976d2; /* Mavi tonu */
       color: white;
       border: none;
       padding: 12px 25px;
@@ -119,18 +118,25 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <p><strong>1.</strong></p>
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      I. Basılı öğretim materyalleri<br>
+      II. Görsel-işitsel öğretim materyalleri<br>
+      III. Modeller<br>
+      IV. İşitsel materyaller
+    </p>
+
+    <p>
+      Güneş sisteminin nasıl çalıştığını hareketli olarak göstermek isteyen bir öğretmenin
+      yukarıdaki öğretim materyallerinden hangisini ya da hangilerini kullanması beklenir?
     </p>
 
     <div class="options" id="optionsContainer">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) II ve III</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) I ve III</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) I ve II</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) I, II ve IV</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) II, III ve IV</button>
     </div>
 
     <div id="feedbackArea">
@@ -145,77 +151,79 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; 
+    const QUESTION_ID = "S1";
+    const nextUrl = "2.html"; 
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya ait geri bildirimler (Doğru cevap B)
+    // Feedback içeriği (Senin verilerin)
     const feedbackMap = {
       A: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡 Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Bravo! Öğretim materyali türleriyle ilgili harika bir başlangıç yaptın! 👍🏻"
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Yanlış bir cevapla başladın ama moralini bozma, dikkatini dağıtan bir şey olmuş olabilir! Açıklamaya odaklanmanı öneriyorum.\n\nGüneş sisteminin nasıl çalıştığını hareketli olarak göstermek isteyen bir öğretmen, video gibi hem görsel hem işitsel öğretim materyallerini ve modelleri kullanabilir."
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡 Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Yanlış bir cevapla başladın ama moralini bozma, dikkatini dağıtan bir şey olmuş olabilir! Açıklamaya odaklanmanı öneriyorum.\n\nGüneş sisteminin nasıl çalıştığını hareketli olarak göstermek isteyen bir öğretmen, video gibi hem görsel hem işitsel öğretim materyallerini ve modelleri kullanabilir."
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡 Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Yanlış bir cevapla başladın ama moralini bozma, dikkatini dağıtan bir şey olmuş olabilir! Açıklamaya odaklanmanı öneriyorum.\n\nGüneş sisteminin nasıl çalıştığını hareketli olarak göstermek isteyen bir öğretmen, video gibi hem görsel hem işitsel öğretim materyallerini ve modelleri kullanabilir."
       },
       E: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡 Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Yanlış bir cevapla başladın ama moralini bozma, dikkatini dağıtan bir şey olmuş olabilir! Açıklamaya odaklanmanı öneriyorum.\n\nGüneş sisteminin nasıl çalıştığını hareketli olarak göstermek isteyen bir öğretmen, video gibi hem görsel hem işitsel öğretim materyallerini ve modelleri kullanabilir."
       }
     };
 
     let answered = false;
 
     function handleAnswer(optionKey) {
-      if (answered) return;
+      if (answered) return; // Zaten cevaplandıysa tekrar tıklatmayalım
       answered = true;
 
       const fb = feedbackMap[optionKey];
       if (!fb) return;
 
-      // 1. Tüm butonları kilitle
+      // 1. Tüm butonları kilitle (tekrar basılmasın)
       const buttons = document.querySelectorAll('.options button');
       buttons.forEach(btn => btn.disabled = true);
 
-      // 2. Tıklanan butonu işaretle
+      // 2. Tıklanan butonu görsel olarak işaretle
       const clickedBtn = document.getElementById('btn' + optionKey);
       
+      // Doğru mu yanlış mı kontrolü
       const isCorrect = (fb.type === "correct");
 
       if (isCorrect) {
         clickedBtn.classList.add('selected-correct');
-        clickedBtn.innerHTML += "  (Doğru Cevap)";
+        clickedBtn.innerHTML += "  (Doğru Cevap)"; // İsteğe bağlı: Buton içine yazı ekleme
       } else {
         clickedBtn.classList.add('selected-wrong');
-        clickedBtn.innerHTML += "  (Cevabınız)";
+        clickedBtn.innerHTML += "  (Cevabınız)"; // İsteğe bağlı
       }
 
-      // 3. Feedback Alanını Doldur
+      // 3. Feedback Alanını Hazırla
       const fbArea = document.getElementById('feedbackArea');
       const fbTitle = document.getElementById('feedbackTitle');
       const fbText = document.getElementById('feedbackText');
 
+      // İçeriği doldur
       fbText.textContent = fb.message;
 
       if (isCorrect) {
         fbTitle.textContent = "Doğru Yanıt!";
         fbTitle.style.color = "#2e7d32";
-        fbArea.className = "status-correct";
+        fbArea.className = "status-correct"; // Yeşil kenar çizgisi için
         fbArea.style.backgroundColor = "#e8f5e9";
         fbArea.style.borderColor = "#c8e6c9";
       } else {
         fbTitle.textContent = "Yanlış Yanıt!";
         fbTitle.style.color = "#c62828";
-        fbArea.className = "status-wrong";
+        fbArea.className = "status-wrong"; // Kırmızı kenar çizgisi için
         fbArea.style.backgroundColor = "#ffebee";
         fbArea.style.borderColor = "#ffcdd2";
       }
@@ -226,7 +234,7 @@
       // 4. Sonraki Soru butonunu göster
       document.getElementById('nextButtonContainer').style.display = "block";
 
-      // 5. Log kaydı
+      // 5. Log kaydı (Değişmedi)
       saveLog(optionKey, fb.type);
     }
 
@@ -262,6 +270,3 @@
 
 </body>
 </html>
-
-```
-

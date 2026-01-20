@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>17. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,30 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>17. Soru</h2>
+
+    <p><strong>17.</strong></p>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      I. Doküman Kamera<br>
+      II. Gösterim tahtası<br>
+      III. Tepegöz<br>
+      IV. Opak projektör
+    </p>
+
+    <p>
+      Sinan Öğretmen, kalabalık ve geniş bir sınıfta öğrencilere origami (kağıt katlama sanatı) dersi verecektir.
+      Bunun için gösterip-yaptırma tekniğini kullanmak isteyen öğretmen, katlamaları sınıf içerisinde önce kendisi yapacak
+      sonra da öğrencilerin yapmasını isteyecektir. Sinan Öğretmenin sınıftaki tüm öğrencilerle eş zamanlı olarak bu
+      çalışmayı gerçekleştirmesi için yukarıdaki öğretim araçlarının hangisinden ya da hangilerinden faydalanabilir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) I ve II</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) I ve III</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Yalnız I</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) II ve IV</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) III ve IV</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +154,33 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S17";
+    const nextUrl = "18.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
+    
+    const infoText = "\n⁉️💡Doküman kamerasıyla origami gibi üç boyutlu öğretim materyallerinin yapım süreci eş zamanlı olarak ayrıntılı bir şekilde öğrencilere sunulabilir. Diğer araçlarla üç boyutlu materyallerin görüntülerinin yansıtılması mümkün değildir.";
 
-    // 3. Soruya özel feedback metinleri
+    // 17. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Yanıtın yanlış olsa da moralini bozma, açıklamayı okuyarak yanıtının neden yanlış olduğunu anlayabilirsin." + infoText
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Yanıtın yanlış olsa da moralini bozma, açıklamayı okuyarak yanıtının neden yanlış olduğunu anlayabilirsin." + infoText
       },
       C: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Harika, tam isabet. Öğretim araçları konusunu iyi anlamış görünüyorsun. 👍🏻"
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Yanıtın yanlış olsa da moralini bozma, açıklamayı okuyarak yanıtının neden yanlış olduğunu anlayabilirsin." + infoText
       },
       E: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Yanıtın yanlış olsa da moralini bozma, açıklamayı okuyarak yanıtının neden yanlış olduğunu anlayabilirsin." + infoText
       }
     };
 

@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>9. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,26 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>9. Soru</h2>
+
+    <p><strong>9.</strong></p>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Sema Öğretmen internet üzerinden elde ettiği bir haberi öğretim materyali olarak kullanmak istemiş
+      ve içeriğinin gerçekleri yansıtıp yansıtmadığını kontrol etmek için bazı araştırmalar
+      gerçekleştirmiştir.
+    </p>
+
+    <p>
+      Sema Öğretmenin bu tutumu medya okuryazarlığının hangi boyutuyla ilişkilidir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Üretim</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Dil</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Temsiliyet</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Hedef Kitle</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Katılım</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +150,31 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S9";
+    const nextUrl = "10.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    // 9. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Yanlış cevaplar doğru cevaba ulaşmanın bir parçasıdır. Önemli olan, doğru cevaba odaklanarak medya okuryazarlığı becerilerini geliştirebilmendir.\n\n⁉️💡Sema Öğretmenin öğretim materyali içeriğinin gerçeği yansıtıp yansıtmadığını kontrol etmesi medya okuryazarlığının temsiliyet boyutuyla ilgilidir."
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Yanlış cevaplar doğru cevaba ulaşmanın bir parçasıdır. Önemli olan, doğru cevaba odaklanarak medya okuryazarlığı becerilerini geliştirebilmendir.\n\n⁉️💡Sema Öğretmenin öğretim materyali içeriğinin gerçeği yansıtıp yansıtmadığını kontrol etmesi medya okuryazarlığının temsiliyet boyutuyla ilgilidir."
       },
       C: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Süper! Gerçek bir medya okur yazarı olduğunu gösteriyorsun. 👌"
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Yanlış cevaplar doğru cevaba ulaşmanın bir parçasıdır. Önemli olan, doğru cevaba odaklanarak medya okuryazarlığı becerilerini geliştirebilmendir.\n\n⁉️💡Sema Öğretmenin öğretim materyali içeriğinin gerçeği yansıtıp yansıtmadığını kontrol etmesi medya okuryazarlığının temsiliyet boyutuyla ilgilidir."
       },
       E: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "cognitive",
+        message: "Yanlış cevaplar doğru cevaba ulaşmanın bir parçasıdır. Önemli olan, doğru cevaba odaklanarak medya okuryazarlığı becerilerini geliştirebilmendir.\n\n⁉️💡Sema Öğretmenin öğretim materyali içeriğinin gerçeği yansıtıp yansıtmadığını kontrol etmesi medya okuryazarlığının temsiliyet boyutuyla ilgilidir."
       }
     };
 

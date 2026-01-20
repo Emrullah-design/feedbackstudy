@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>29. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,20 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>29. Soru</h2>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Öğretim materyalinin tasarlanması birbiriyle ilişkili birçok işlemin gerçekleştirildiği sistematik bir süreçtir.
+      <br><br>
+      Buna göre aşağıdakilerden hangisi öğretim materyalinin tasarlanmasında öncelikle gerçekleştirilmesi gereken bir işlemdir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Öğretim hedeflerinin belirlenmesi</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Öğrenci özelliklerinin analiz edilmesi</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Kaynak malzemelerin seçimi</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Materyalin öğretim hedefleriyle ilişkilendirilmesi</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Teknolojik imkanların analizi</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +144,33 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S29";
+    const nextUrl = "30.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    const infoText = "\n\n⁉️💡Öğretim materyalinin tasarlanmasında öncelikle öğretim hedeflerinin belirlenmesi gerekmektedir. Hedefler belirlendikten sonra, diğer işlemler bu hedeflere ulaşmayı sağlayacak şekilde gerçekleştirilir.";
+
+    // 29. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Kesinlikle doğru! Süreç öğretim hedeflerinin belirlenmesi ile başlar. 👍🏻"
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Hedef belirlenmesi her zaman ilk aşamadır, dikkat edersen doğru yanıtı bulabilirsin." + infoText
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Hedef belirlenmesi her zaman ilk aşamadır, dikkat edersen doğru yanıtı bulabilirsin." + infoText
       },
       D: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Hedef belirlenmesi her zaman ilk aşamadır, dikkat edersen doğru yanıtı bulabilirsin." + infoText
       },
       E: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Hedef belirlenmesi her zaman ilk aşamadır, dikkat edersen doğru yanıtı bulabilirsin." + infoText
       }
     };
 

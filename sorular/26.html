@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>26. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,16 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
-    <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
-    </p>
+    <h2>26. Soru</h2>
+
+    <p><strong>26.</strong> Öğretim yöntemi kavramına ilişkin aşağıda verilen açıklamalardan hangisi doğrudur?</p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Öğretim yöntemi öğrenciyi amaca ulaştırmak için izlenen yoldur.</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Öğretim yöntemi bireyin öğrenme tarzını belirler.</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Öğretim yöntemi eğitimin genel amaçlarını belirler.</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Öğretim yöntemi öğretim tekniklerine göre belirlenir.</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Öğretim yöntemi öğrenme materyallerini seçme süreçleridir.</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +140,33 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S26";
+    const nextUrl = "27.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    const infoText = "\n\n⁉️💡Öğretim yöntemi, eğitim ve öğretim sürecinde, öğrencilerin belirli bir amaca ulaşmasını sağlamak için kullanılan sistematik ve planlı bir dizi adımdan oluşur.";
+
+    // 26. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Tam on ikiden vurdun! 🎯 Öğretim yöntemi senden sorulur!"
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Üzülme, cevapları yeniden gözden geçirebilirsin! Öğretim yöntemiyle ilgili bilgileri pekiştirmek için güzel bir fırsat!" + infoText
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Üzülme, cevapları yeniden gözden geçirebilirsin! Öğretim yöntemiyle ilgili bilgileri pekiştirmek için güzel bir fırsat!" + infoText
       },
       D: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Üzülme, cevapları yeniden gözden geçirebilirsin! Öğretim yöntemiyle ilgili bilgileri pekiştirmek için güzel bir fırsat!" + infoText
       },
       E: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Üzülme, cevapları yeniden gözden geçirebilirsin! Öğretim yöntemiyle ilgili bilgileri pekiştirmek için güzel bir fırsat!" + infoText
       }
     };
 

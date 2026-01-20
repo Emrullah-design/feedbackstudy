@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>3. Soru</title>
+  <title>15. Soru</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -117,18 +117,21 @@
 <body>
 
   <div class="question-box">
-    <p><strong>3.</strong></p>
+    <h2>15. Soru</h2>
+
+    <p><strong>15.</strong></p>
+
     <p>
-      Aşağıdakilerden hangisi görsel tasarımda renk kullanılarak sağlanabilecek
-      etkilerden birisi değildir?
+      Derse ilişkin öğretim materyalinde öğrencilerin dikkatini üst düzeyde tutmak isteyen bir öğretmenin
+      aşağıdaki denge unsurlarından hangisini tercih etmesi beklenmelidir?
     </p>
 
     <div class="options">
-      <button id="btnA" onclick="handleAnswer('A')">A) Görüntünün gerçekliğini artırmak</button>
-      <button id="btnB" onclick="handleAnswer('B')">B) Etkileşimliliği sağlamak</button>
-      <button id="btnC" onclick="handleAnswer('C')">C) Farklılıkları vurgulamak</button>
-      <button id="btnD" onclick="handleAnswer('D')">D) İstenilen duyusal etkiyi yaratmak</button>
-      <button id="btnE" onclick="handleAnswer('E')">E) Önemli bilgiyi vurgulamak</button>
+      <button id="btnA" onclick="handleAnswer('A')">A) Dairesel denge</button>
+      <button id="btnB" onclick="handleAnswer('B')">B) Simetrik denge</button>
+      <button id="btnC" onclick="handleAnswer('C')">C) Formal denge</button>
+      <button id="btnD" onclick="handleAnswer('D')">D) Asimetrik denge</button>
+      <button id="btnE" onclick="handleAnswer('E')">E) Oransız denge</button>
     </div>
 
     <div id="feedbackArea">
@@ -142,31 +145,31 @@
   </div>
 
   <script>
-    const QUESTION_ID = "S3";
-    const nextUrl = "4.html"; // Sonraki soru dosyası
+    const QUESTION_ID = "S15";
+    const nextUrl = "16.html"; // Sonraki soru dosyası
     const STORAGE_KEY = "quizLogs";
 
-    // 3. Soruya özel feedback metinleri
+    // 15. Soruya özel feedback metinleri
     const feedbackMap = {
       A: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Üzülme, seçenekleri dikkatli bir şekilde gözden geçirerek öğrencilerin dikkatini hangi denge unsuru ile çekeceğini öğrenebilirsin.\n\n⁉️💡Asimetrik denge, dinamizm ve hareketlilik hissi yaratarak görsel ilgiyi çekmek ve öğrencilerin merakını uyandırmak için idealdir."
       },
       B: {
-        type: "correct",
-        message: "Cevabın harika! Doğru yanıtı buldun 👏"
+        type: "affective",
+        message: "Üzülme, seçenekleri dikkatli bir şekilde gözden geçirerek öğrencilerin dikkatini hangi denge unsuru ile çekeceğini öğrenebilirsin.\n\n⁉️💡Asimetrik denge, dinamizm ve hareketlilik hissi yaratarak görsel ilgiyi çekmek ve öğrencilerin merakını uyandırmak için idealdir."
       },
       C: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir.\nEtkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Üzülme, seçenekleri dikkatli bir şekilde gözden geçirerek öğrencilerin dikkatini hangi denge unsuru ile çekeceğini öğrenebilirsin.\n\n⁉️💡Asimetrik denge, dinamizm ve hareketlilik hissi yaratarak görsel ilgiyi çekmek ve öğrencilerin merakını uyandırmak için idealdir."
       },
       D: {
-        type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        type: "correct",
+        message: "Bravo! Öğrencilerin dikkatini nasıl çekeceğini biliyorsun 😊"
       },
       E: {
         type: "affective",
-        message: "Üzülme! Bu hatanı açıklamayı okuyarak yeni bir bilgiye çevirebilirsin.\n\n⁉️💡Etkileşimliliği sağlamak renklerin görsel tasarımda doğrudan bir etkisi değildir. Etkileşimlilik öğrencinin öğretim materyalini kullanarak aktif katılım (soruya cevap verme, oluşturma, eşleştirme vb.) göstermesini gerektirir."
+        message: "Üzülme, seçenekleri dikkatli bir şekilde gözden geçirerek öğrencilerin dikkatini hangi denge unsuru ile çekeceğini öğrenebilirsin.\n\n⁉️💡Asimetrik denge, dinamizm ve hareketlilik hissi yaratarak görsel ilgiyi çekmek ve öğrencilerin merakını uyandırmak için idealdir."
       }
     };
 
